@@ -318,6 +318,9 @@ To set up an on-device voice conversation system that integrates BitNet and Para
 ```bash
 ./scripts/setup_voice_ai_env.sh
 ```
+This script installs BitNet dependencies, clones the Parakeet TTS repository and
+pulls additional packages such as `portaudio19-dev`, `pyaudio`, and `requests`.
+It requires sudo privileges for apt package installation.
 
 After setup you can start a voice chat using:
 

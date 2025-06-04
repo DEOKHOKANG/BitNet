@@ -17,8 +17,10 @@ if [ ! -d "parakeet-tdt" ]; then
 fi
 pip install -r parakeet-tdt/requirements.txt
 
-# 4. Install speech recognition library
-pip install SpeechRecognition pyaudio
+# 4. Install speech recognition library and other utilities
+sudo apt-get update -y
+sudo apt-get install -y portaudio19-dev
+pip install SpeechRecognition pyaudio requests
 
 # 5. Build bitnet project
 python setup_env.py --hf-repo microsoft/BitNet-b1.58-2B-4T
