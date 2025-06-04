@@ -310,3 +310,33 @@ Import-Module "C:\Program Files\Microsoft Visual Studio\2022\Professional\Common
 ```
 
 These steps will initialize your environment and allow you to use the correct Visual Studio tools.
+
+## Voice Conversation AI
+
+To set up an on-device voice conversation system that integrates BitNet and Parakeet TTS with speech recognition, run:
+
+```bash
+./scripts/setup_voice_ai_env.sh
+```
+This script installs BitNet dependencies, clones the Parakeet TTS repository and
+pulls additional packages such as `portaudio19-dev`, `pyaudio`, and `requests`.
+It requires sudo privileges for apt package installation.
+
+After setup you can start a voice chat using:
+
+```bash
+python scripts/voice_chat.py
+```
+
+To train a QLoRA adapter:
+
+```bash
+python scripts/train_qlora.py --dataset wikitext
+```
+
+Run a dummy reliability test:
+
+```bash
+./scripts/test_dummy.sh
+```
+
